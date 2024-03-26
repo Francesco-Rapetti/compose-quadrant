@@ -49,13 +49,13 @@ fun Quadrant(title: String, description: String, color: Color, modifier: Modifie
     Box (
         modifier = modifier
             .background(color = color)
-            .fillMaxHeight(0.5f)
-            .fillMaxWidth(0.5f)
+            .fillMaxHeight(1f)
     ) {
         Column(
             modifier = modifier
                 .padding(16.dp)
-                .align(alignment = Alignment.Center),
+
+
 
         ) {
             Text(
@@ -83,20 +83,40 @@ fun Page() {
             modifier = Modifier
                 .fillMaxWidth()
                 .fillMaxHeight(0.5f)
-                .weight(1f)
         ) {
             Quadrant(
                 title = "Text composable",
                 description = "Displays text and follows the recommended Material Design guidelines.",
                 color = Color(0xFFEADDFF),
-                modifier = Modifier.weight(1f)
+                Modifier.weight(1f)
             )
             Quadrant(
                 title = "Image composable",
                 description = "Creates a composable that lays out and draws a given Painter class object.",
-                color = Color(0xFFD0BCFF)
+                color = Color(0xFFD0BCFF),
+                Modifier.weight(1f)
+            )
+        }
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+        ) {
+            Quadrant(
+                title = "Row composable",
+                description = "A layout composable that places its children in a horizontal sequence.",
+                color = Color(0xFFB69DF8),
+                Modifier.weight(1f)
+            )
+            Quadrant(
+                title = "Column composable",
+                description = "A layout composable that places its children in a vertical sequence.",
+                color = Color(0xFFF6EDFF),
+                Modifier.weight(1f)
             )
         }
 
     }
+
+
 }
